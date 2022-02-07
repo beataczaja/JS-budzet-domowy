@@ -1,0 +1,54 @@
+@font-face {
+  font-family: Roboto;
+  src: url(Roboto-Regular.ttf);
+}
+
+body {
+  font-family: Roboto;
+}
+
+.navLogo {
+  display: flex;
+  justify-content: center;
+}
+
+.news {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-top: 20px;
+  border: 1px solid #dee2e6;
+}
+
+.img-pig {
+  height: 115px;
+  width: 140px;
+  background-image: url(pig-money.png);
+  background-position: center;
+  background-size: cover;
+  margin-top: 20px;
+}
+
+/* -----------------------table----------------------------------- */
+
+/* -----------------------short----------------------------------- */
+
+.c-y {
+  color: rgb(241, 206, 8);
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.f-w {
+  font-weight: bold;
+}
+
+.mg-t-20 {
+  margin-top: 20px;
+}
+
+.t-c {
+  text-align: center;
+}
