@@ -5,27 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="index.js"></script>
-    <!-- <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
-    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
-      integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-      crossorigin="anonymous"
-    ></script>
+    <!-- links -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
       integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="style.css" />
+    /> -->
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -34,10 +27,10 @@
     />
   </head>
   <body>
-    <nav class="navbar navLogo">
+    <nav class="navLogo">
       <div class="img-pig"></div>
     </nav>
-    <!-- <div class="container">
+    <div class="container">
       <div class="col-12 news"><span>Komunikat</span></div>
       <table class="table table-bordered">
         <thead>
@@ -49,10 +42,17 @@
                   <input
                     type="text"
                     placeholder="Nazwa przychodu"
-                    name="incomeName"
+                    name="newIncomeName"
                   />
-                  <input type="text" placeholder="Kwota" name="incomeAmount" />
-                  <button class="btn btn btn-sm btn-warning">DODAJ</button>
+                  <input
+                    type="number"
+                    step=".01"
+                    placeholder="Kwota"
+                    name="newIncomeAmount"
+                  />
+                  <button type="submit" class="btn btn btn-sm btn-warning">
+                    DODAJ
+                  </button>
                 </form>
               </div>
             </th>
@@ -78,20 +78,24 @@
         </thead>
         <tbody>
           <tr>
-            <td><ul id="incomeData"></ul></td>
+            <td><ol id="incomeData"></ol></td>
           </tr>
           <tr>
-            <td>Suma przychodów:</td>
+            <td>
+              <div id="sumIncomes"><span>Suma przychodów: </span></div>
+            </td>
             <td>Suma wydatków:</td>
           </tr>
+          <script src="index.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+          <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
+            integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+            crossorigin="anonymous"
+          ></script>
         </tbody>
       </table>
-    </div> -->
-    <form id="incomeForm">
-      <input type="text" placeholder="Nazwa przychodu" name="incomeName" />
-      <input type="text" placeholder="Kwota" name="incomeAmount" />
-      <button type="submit" class="btn btn btn-sm btn-warning">DODAJ</button>
-    </form>
-    <ul id="incomeData"></ul>
+    </div>
   </body>
 </html>
