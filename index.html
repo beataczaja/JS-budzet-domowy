@@ -31,7 +31,7 @@
       <div class="img-pig"></div>
     </nav>
     <div class="container">
-      <div class="col-12 news"><span>Komunikat</span></div>
+      <div id="balance" class="col-12 news"></div>
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -50,7 +50,11 @@
                     placeholder="Kwota"
                     name="newIncomeAmount"
                   />
-                  <button type="submit" class="btn btn btn-sm btn-warning">
+                  <button
+                    type="submit"
+                    id="btnAddId"
+                    class="btn btn btn-sm btn-warning"
+                  >
                     DODAJ
                   </button>
                 </form>
@@ -59,16 +63,17 @@
             <th class="col-12-sm col-6-md col-6-lg t-c f-w">
               <span>WYDATKI</span>
               <div class="mg-t-20">
-                <form id="expensesForm">
+                <form id="expenseForm">
                   <input
                     type="text"
                     placeholder="Nazwa wydatku"
-                    name="expensesName"
+                    name="newExpenseName"
                   />
                   <input
-                    type="text"
+                    type="number"
+                    step=".01"
                     placeholder="Kwota"
-                    name="expensesAmount"
+                    name="newExpenseAmount"
                   />
                   <button class="btn btn btn-sm btn-warning">DODAJ</button>
                 </form>
@@ -79,21 +84,24 @@
         <tbody>
           <tr>
             <td><ol id="incomeData"></ol></td>
+            <td><ol id="expenseData"></ol></td>
           </tr>
           <tr>
             <td>
               <div id="sumIncomes"><span>Suma przychodów: </span></div>
             </td>
-            <td>Suma wydatków:</td>
+            <td>
+              <div id="sumExpenses"><span>Suma wydatków: </span></div>
+            </td>
           </tr>
           <script src="index.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-          <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
           <script
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"
             integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
             crossorigin="anonymous"
           ></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+          <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
         </tbody>
       </table>
     </div>

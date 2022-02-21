@@ -44,6 +44,20 @@ body {
   outline: 0;
 }
 
+.btnSave {
+  border-radius: 30px;
+  background-color: rgb(12, 134, 12);
+  color: #fff;
+  outline: 0;
+}
+
+.btnCancel {
+  border-radius: 30px;
+  background-color: rgb(240, 178, 6);
+  color: #fff;
+  outline: 0;
+}
+
 /* -----------------------short----------------------------------- */
 .b-r-red {
   border: 1px solid red;
@@ -51,6 +65,10 @@ body {
 
 .c-red {
   color: red;
+}
+
+.c-green {
+  color: rgb(37, 138, 6);
 }
 
 .c-y {
