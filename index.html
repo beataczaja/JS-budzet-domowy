@@ -35,8 +35,13 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th class="col-12-sm col-6-md col-6-lg t-c f-w">
+            <th class="t-c f-w">
               <span>PRZYCHODY</span>
+              <div>
+                <label id="errIncome" class="hidden c-red"
+                  >Wpisz nazwę i kwotę przychodu</label
+                >
+              </div>
               <div class="mg-t-20">
                 <form id="incomeForm">
                   <input
@@ -50,18 +55,24 @@
                     placeholder="Kwota"
                     name="newIncomeAmount"
                   />
+
                   <button
                     type="submit"
                     id="btnAddId"
-                    class="btn btn btn-sm btn-warning"
+                    class="btn btn btn-sm btn-warning mg-t--5"
                   >
                     DODAJ
                   </button>
                 </form>
               </div>
             </th>
-            <th class="col-12-sm col-6-md col-6-lg t-c f-w">
+            <th class="t-c f-w">
               <span>WYDATKI</span>
+              <div>
+                <label id="errExpense" class="hidden c-red"
+                  >Wpisz nazwę i kwotę przychodu</label
+                >
+              </div>
               <div class="mg-t-20">
                 <form id="expenseForm">
                   <input
@@ -75,7 +86,13 @@
                     placeholder="Kwota"
                     name="newExpenseAmount"
                   />
-                  <button class="btn btn btn-sm btn-warning">DODAJ</button>
+
+                  <button
+                    type="submit"
+                    class="btn btn btn-sm btn-warning mg-t--5"
+                  >
+                    DODAJ
+                  </button>
                 </form>
               </div>
             </th>

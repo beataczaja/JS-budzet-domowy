@@ -58,6 +58,11 @@ body {
   outline: 0;
 }
 
+/*Err*/
+.hidden {
+  visibility: hidden;
+}
+
 /* -----------------------short----------------------------------- */
 .b-r-red {
   border: 1px solid red;
@@ -87,6 +92,21 @@ body {
   margin-top: 20px;
 }
 
+.mg-t--5 {
+  margin-top: -5px;
+}
+
 .t-c {
   text-align: center;
+}
+/* -----transpozycja kolumn na wiersze dla małych ekranów------- */
+@media screen and (max-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
 }

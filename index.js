@@ -68,6 +68,7 @@ const renderIncome = () => {
     editBtn.textContent = "Edytuj";
     editBtn.classList.add("btnEdit");
     incomeLi.appendChild(editBtn);
+
     //--event na button
     editBtn.addEventListener("click", (e) => {
       //const button = e.target; //można też tak zamiast editBtn
@@ -324,7 +325,7 @@ const balanceShow = (incomeData, expenseData) => {
     balanceSpan.textContent = `Możesz jeszcze wydać ${balance(
       incomeData,
       expenseData
-    )} zł`;
+    ).toFixed(2)} zł`;
     balanceSpan.classList.remove("c-red");
     balanceSpan.classList.add("c-green");
   }
@@ -335,7 +336,7 @@ const balanceShow = (incomeData, expenseData) => {
   }
   if (balance(incomeData, expenseData) < 0) {
     balanceSpan.textContent = `Bilans jest ujemny. Jesteś na minusie ${Math.abs(
-      balance(incomeData, expenseData)
+      balance(incomeData, expenseData).toFixed(2)
     )} zł`;
     balanceSpan.classList.remove("c-green");
     balanceSpan.classList.add("c-red");
@@ -354,6 +355,13 @@ incomeFormDOM.addEventListener("submit", (e) => {
   e.preventDefault(); //forma nie przeładuje strony
 
   const { newIncomeName, newIncomeAmount } = e.currentTarget.elements; // bo <input name="newIncomeName" /> i  <input name="newIncomeAmount" />
+  //--err
+  const errIncome = qs("#errIncome");
+  [(newIncomeName, newIncomeAmount)].forEach((node) =>
+    node.value === ""
+      ? errIncome.classList.remove("hidden")
+      : errIncome.classList.add("hidden")
+  );
   if (newIncomeName.value !== "" && newIncomeAmount.value !== "") {
     sumIncomesShow(incomeData); //nowa suma
 
@@ -374,9 +382,15 @@ expenseFormDOM.addEventListener("submit", (e) => {
   e.preventDefault(); //forma nie przeładuje strony
 
   const { newExpenseName, newExpenseAmount } = e.currentTarget.elements; // bo <input name="newExpenseName" /> i  <input name="newIncomeAmount" />
+  //--err
+  const errExpense = qs("#errExpense");
+  [(newExpenseName, newExpenseAmount)].forEach((node) =>
+    node.value === ""
+      ? errExpense.classList.remove("hidden")
+      : errExpense.classList.add("hidden")
+  );
   if (newExpenseName.value !== "" && newExpenseAmount.value !== "") {
     sumExpensesShow(expenseData); //nowa suma
-
     const newExpense = {
       id: expenseId,
       name: newExpenseName.value,
