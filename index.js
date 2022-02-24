@@ -63,6 +63,7 @@ const renderIncome = () => {
     incomeLi.appendChild(incomeNameAmountSpan);
     const inputNameEdit = ce("input");
     const inputAmountEdit = ce("input");
+    //inputAmountEdit.type = "number";
     //------Button EDYTUJ/ZAPISZ
     const editBtn = ce("button");
     editBtn.textContent = "Edytuj";
@@ -75,7 +76,7 @@ const renderIncome = () => {
       //const li = editBtn.parentNode; //można też tak zamiast incomeLi
       if (editBtn.textContent === "Edytuj") {
         inputNameEdit.type = "text";
-        inputAmountEdit.type = "text";
+        inputAmountEdit.type = "number";
         inputNameEdit.value = incomeNameSpan.textContent;
         inputAmountEdit.value = incomeAmountSpan.textContent;
         incomeLi.insertBefore(inputAmountEdit, incomeNameAmountSpan);
@@ -179,7 +180,7 @@ const renderExpense = () => {
       //const li = editBtn.parentNode; //można też tak zamiast expenseLi
       if (editBtn.textContent === "Edytuj") {
         inputNameEdit.type = "text";
-        inputAmountEdit.type = "text";
+        inputAmountEdit.type = "number";
         inputNameEdit.value = expenseNameSpan.textContent;
         inputAmountEdit.value = expenseAmountSpan.textContent;
         expenseLi.insertBefore(inputAmountEdit, expenseNameAmountSpan);
